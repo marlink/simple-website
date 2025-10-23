@@ -1,0 +1,286 @@
+/* style.css */
+/* Base & Theme */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-image, .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background-video {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.video-playing .background-image, .video-playing .overlay {
+  opacity: 0;
+}
+
+.video-playing .background-video {
+  opacity: 1;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px; /* Increased spacing */
+  padding: 16px 0; /* Vertical spacing */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  z-index: 10;
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar:not(.sticky-active) {
+  position: relative;
+}
+
+.navbar.hide {
+  opacity: 0;
+  top: -100px;
+}
+
+/* Logo */
+.logo {
+  height: 48px;
+  transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.video-playing .logo {
+  filter: invert(40%) sepia(100%) saturate(1000%) hue-rotate(90deg);
+  box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Nav Links */
+.nav-center {
+  display: flex;
+  gap: 24px; /* Increased spacing */
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: border-color 0.3s;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #0fb40f; /* Bright green underline */
+}
+
+/* CTA Button */
+.cta-btn {
+  background: #00ff00;
+  color: #000;
+  border: none;
+  padding: 12px 24px; /* Spacious padding */
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.cta-btn:hover .chevron {
+  transform: translateX(4px);
+  transition: transform 0.3s ease;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 48px 16px; /* Spacious padding */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px; /* Increased spacing */
+}
+
+.footer h4 {
+  margin-bottom: 16px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer a:hover {
+  color: #00ff00;
+}
+
+/* Main content */
+.main-content {
+  padding: 48px 16px;
+}
+
+/* Home Page Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.home-logo {
+  height: 200px;
+  filter: invert(0);
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out 0.4s;
+}
+
+.logo-text {
+  position: absolute;
+  font-size: 450px;
+  color: #fff;
+  opacity: 0;
+  content: 'M'; /* Set content via CSS */
+  font-family: sans-serif;
+  font-weight: bold;
+  position: relative; /* Needed for pseudo-element positioning */
+}
+
+.logo-text::after {
+  content: 'a';
+  position: absolute;
+  opacity: 0; /* Initially hidden */
+}
+
+.full-name-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.full-name {
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+  /* For typing effect */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .1em solid #00ff00; /* The cursor */
+}
+
+.sub-line {
+  font-size: 24px;
+  color: #00ff00; /* Accent color for the sub-line */
+  margin-top: 8px;
+  opacity: 0; /* Start hidden */
+}
+
+/* Animation Keyframes */
+@keyframes reveal-m {
+  0%, 20% { opacity: 0; } /* Start hidden, delay is 20% of 2s = 400ms */
+  45% { opacity: 1; } /* Fade in */
+  65% { opacity: 1; } /* Hold for 900ms ( (65-20)% of 2s = 900ms ) */
+  90%, 100% { opacity: 0; } /* Fade out */
+}
+
+@keyframes reveal-a {
+  0%, 90% { opacity: 0; } /* Hidden for 2s (90% of 2.2s) */
+  100% { opacity: 1; } /* Appear at the end */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #00ff00; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hover Animations */
+.logo-container:hover .home-logo {
+  filter: invert(1); /* Change logo to white */
+  opacity: 0; /* Fade out the logo */
+}
+
+.logo-container:hover ~ .main-heading-container {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.5s;
+}
+
+.main-heading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.main-heading {
+  font-size: 128px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.cards-section .container {
+  display: block;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+  font-size: 128px;
+  font-weight: bold;
+  color: #fff;
+}

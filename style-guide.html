@@ -1,0 +1,188 @@
+<!-- style-guide.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      padding: 48px 16px;
+    }
+    h1, h2, h3, h4 {
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+    section {
+      margin-bottom: 64px;
+    }
+    .example {
+      padding: 24px;
+      margin-bottom: 16px;
+      background: #111;
+      border: 1px solid #222;
+    }
+    .btn-example {
+      margin: 8px 0;
+    }
+    .nav-example, .footer-example {
+      padding: 16px 0;
+    }
+    .flex {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .box {
+      background: #222;
+      color: #fff;
+      padding: 16px;
+      flex: 1 1 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Website Style Guide</h1>
+
+  <!-- Colors -->
+  <section>
+    <h2>Colors</h2>
+    <div class="flex">
+      <div class="box">Background: #000</div>
+      <div class="box" style="background:#000;color:#fff;">Text: #fff</div>
+      <div class="box" style="background:#00ff00;color:#000;">Accent: #00FF00</div>
+    </div>
+  </section>
+
+  <!-- Typography -->
+  <section>
+    <h2>Typography</h2>
+    <p>Font family: sans-serif</p>
+    <p>Heading sizes:</p>
+    <h1>H1 – 48px</h1>
+    <h2>H2 – 36px</h2>
+    <h3>H3 – 28px</h3>
+    <h4>H4 – 20px</h4>
+    <p>Body text – 16px / line-height 1.6</p>
+  </section>
+
+  <!-- Spacing -->
+  <section>
+    <h2>Spacing</h2>
+    <p>All vertical padding/margin multiples of <strong>16px</strong></p>
+    <p>All horizontal spacing multiples of <strong>24px</strong></p>
+    <div class="example">Padding example: 16px top/bottom, 24px left/right</div>
+  </section>
+
+  <!-- Buttons -->
+  <section>
+    <h2>Buttons</h2>
+    <div class="btn-example">
+      <button class="cta-btn">
+        Free Audyt <span class="chevron">→</span>
+      </button>
+    </div>
+    <p>Hover state: chevron animates 4px to right</p>
+  </section>
+
+  <!-- Navbar -->
+  <section>
+    <h2>Navbar</h2>
+    <div class="nav-example">
+      <div class="flex" style="align-items: center; justify-content: space-between;">
+        <div class="box" style="flex: 0 0 auto; background: none; padding: 0;">
+          <img src="img/logo.mc-logo.svg" alt="Company Logo" style="height: 40px;">
+        </div>
+        <div class="box" style="flex: 1 1 auto; background: none; padding: 0; text-align: center;">
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 24px;">
+            <li><a href="#" style="color: #fff; text-decoration: none;">Home</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Notes</a></li>
+            <li><a href="#" class="active-link" style="color: #00FF00; text-decoration: none; border-bottom: 2px solid #00FF00; padding-bottom: 4px;">AI Lab</a></li>
+          </ul>
+        </div>
+        <div class="box" style="flex: 0 0 auto; background: none; padding: 0;">
+          <button class="cta-btn">
+            Free Audyt <span class="chevron">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <p>Note: The logo path `img/#mc-logo.svg` is a placeholder. Replace `#mc-logo.svg` with the actual filename.</p>
+    <p>Active link example shown for "AI Lab".</p>
+    <p>Hover state for CTA button chevron is described in the "Buttons" section.</p>
+    <p>Sticky Navbar: appears after scrolling 5%, hides on scrolling down, shows on scrolling up</p>
+    <p>Active link: bright green underline (#00FF00)</p>
+  </section>
+
+  <!-- Footer -->
+  <section>
+    <h2>Footer</h2>
+    <div class="footer-example">
+      <div class="flex">
+        <div class="box">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Style Guide</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Contact</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Blog</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Sign-Up</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 1</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 2</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 3</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 4</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 5</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 6</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 1</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 2</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 3</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 4</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 5</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Link 6</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Support</h4>
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+            <li>Link 4</li>
+            <li>Link 5</li>
+            <li>Link 6</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components / Utilities -->
+  <section>
+    <h2>Components & Utilities</h2>
+    <ul>
+      <li>CTA Buttons</li>
+      <li>Navbars (standard and sticky)</li>
+      <li>Footers</li>
+      <li>Headings (H1-H4)</li>
+      <li>Paragraphs / Lists</li>
+      <li>Spacing utilities (16px vertical / 24px horizontal)</li>
+      <li>Hover / Active States</li>
+      <li>Responsive breakpoints: 0–768px (mobile), 769–1200px (tablet), 1200px+ (desktop)</li>
+    </ul>
+  </section>
+
+</body>
+</html>
